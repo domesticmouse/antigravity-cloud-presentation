@@ -11,15 +11,15 @@ card:
 
 ## 1. Session 9: Autonomous Multi-Worktree Orchestration (`/implement-spec`) {#implement-spec}
 
-At **Stop 104** of `02-skilled.cast`, the operator cleared the session (`/clear`) and typed a single command:
+At **Stop 104** of `02-skilled.cast`, I cleared the session (`/clear`) and typed a single command:
 
 ```text caption="Stop 104 of 02-skilled.cast — Launching autonomous implementation & review"
 /implement-spec
 ```
 
-For the next **71 minutes of 1x execution** (compressed to `71 seconds` in the warped cast player), the operator did not type a single keystroke.
+For the next **71 minutes of 1x execution** (compressed to `71 seconds` in the warped cast player), I did not type a single keystroke.
 
-Why could `/implement-spec` run autonomously for over an hour without drifting off course, whereas the 14-minute one-shot build in the **Baseline Run** drifted into 8 domain bugs?
+Now, why could `/implement-spec` run autonomously for over an hour without drifting off course, whereas the 14-minute one-shot build in the **Baseline Run** drifted into 8 domain bugs?
 
 Because the **orchestrator** (`Session 09`) never wrote application code in its own context window! Instead, it acted as a coordinator—spawning **11 fresh-context subagents** (`Traces 10–20`) in isolated git worktrees (`/tmp/audio-inventory-wt/ticket-01..08`), each armed with:
 1. [`GLOSSARY.md`](https://github.com/domesticmouse/antigravity-cloud-presentation/blob/main/experiments/audio_inventory_skilled/GLOSSARY.md) & [`docs/adr/0001-rust-htmx-turso-stack.md`](https://github.com/domesticmouse/antigravity-cloud-presentation/blob/main/experiments/audio_inventory_skilled/docs/adr/0001-rust-htmx-turso-stack.md)
@@ -39,14 +39,14 @@ flowchart LR
 
 ## 2. What the Parallel Two-Axis `/code-review` Caught Automatically {#two-axis-review}
 
-Remember how in the **Baseline Run**, the operator had to manually run `/clear` → `Please review the codebase` → `please fix` to discover domain bugs?
+Remember how in the **Baseline Run**, I had to manually run `/clear` → `Please review the codebase` → `please fix` to discover domain bugs?
 
 In the **Skilled Run**, `/implement-spec` automatically invoked `/code-review` at **Stop 105**, spawning two independent review subagents in parallel across the `main...feat/audio-inventory` diff:
 
 1. **Standards Axis Reviewer ([Trace 19](https://github.com/domesticmouse/antigravity-cloud-presentation/blob/main/artifacts/traces/audio_inventory_skilled/19-8ba90db0-none.md))**: Audited the code against `GLOSSARY.md`, `ADR 0001`, and deep-module design principles (`/codebase-design`).
 2. **Spec Axis Reviewer ([Trace 20](https://github.com/domesticmouse/antigravity-cloud-presentation/blob/main/artifacts/traces/audio_inventory_skilled/20-ee6bf12d-none.md))**: Audited every user story, SQL column name, and state transition against `spec.md`.
 
-Look at the **5 subtle discrepancies** those two review subagents caught and fixed *before* handing control back to the operator at **Stop 107**:
+Look at the **5 subtle discrepancies** those two review subagents caught and fixed *before* handing control back to me at **Stop 107**:
 
 Table: Findings caught and fixed automatically by the parallel Standards + Spec `/code-review` in Session 9.
 | Axis | Finding Caught | Automated Fix Applied in `ticket-review-fixes` |
@@ -55,7 +55,7 @@ Table: Findings caught and fixed automatically by the parallel Standards + Spec 
 | **Spec** | **Installed Stock Permanence Invariant (`src/builds.rs`)**: Editing or substituting a BOM line that was already `Installed` (soldered onto a PCB) could refund parts to a `Stock Lot`. | Enforced strict permanence in `transition_bom_line_status` and `substitute_bom_line_component`: once `Installed`, stock is never returned to a lot. |
 | **Spec** | **Transactional Atomicity in Staged CSV Commits (`src/imports.rs`)**: Batch CSV imports inserted rows in a loop without wrapping the batch in a single SQL transaction. | Wrapped `commit_component_import_batch` and `commit_bom_import_batch` in explicit `BEGIN` / `COMMIT` / `ROLLBACK` transactions. |
 | **Spec** | **HTMX Verb Alignment (`src/web.rs`)**: Inline BOM status buttons used `hx-post` instead of `hx-patch="/builds/{kit_id}/bom/{bom_id}/status"`. | Added `.patch(...)` route support and updated the Maud button templates to `hx-patch`. |
-| **Standards** | **Shallow Attachment Helper Duplication**: Path sanitization was duplicated between `web.rs` and `backup.rs`. | Extracted a deep `src/attachments.rs` module (`resolve_effective_data_dir`, `sanitize_attachment_filename`). |
+| **Standards** | **Shallow Attachment Helper Duplication**: Path sanitisation was duplicated between `web.rs` and `backup.rs`. | Extracted a deep `src/attachments.rs` module (`resolve_effective_data_dir`, `sanitize_attachment_filename`). |
 
 ---
 
@@ -63,9 +63,9 @@ Table: Findings caught and fixed automatically by the parallel Standards + Spec 
 
 At the end of Session 9 (**Stop 107**), all **41 Rust unit and integration tests** passed with zero warnings. Was the app 100% bug-free?
 
-**Almost—but not quite!** Backend unit tests and HTTP status assertions don't run a real browser HTML5 parser, CSS layout engine, or client-side `htmx.min.js` event loop.
+**Almost—but not quite!** Turns out, backend unit tests and HTTP status assertions don't run a real browser HTML5 parser, CSS layout engine, or client-side `htmx.min.js` event loop.
 
-In **Session 10 (Stops 108–111)**, the operator ran `/clear` and gave `agy` the exact same final prompt as the Baseline Run:
+In **Session 10 (Stops 108–111)**, I ran `/clear` and gave `agy` the exact same final prompt as the Baseline Run:
 
 ```text caption="Stop 109 of 02-skilled.cast — Driving Chrome via Chrome DevTools MCP"
 please test this site in a web browser
@@ -175,7 +175,7 @@ please test this site in a web browser
       correct: true
       explain: "Correct! Running Standards and Spec reviews in parallel subagents catches both architectural smells and missed requirements."
     - letter: "B"
-      text: "The Frontend axis (CSS colors) and the CloudBilling axis (monthly invoices)."
+      text: "The Frontend axis (CSS colours) and the CloudBilling axis (monthly invoices)."
       correct: false
       explain: "`/code-review` specifically splits review into Standards (coding standards/glossary/ADRs) and Spec (originating spec/ticket requirements)."
     - letter: "C"
@@ -229,5 +229,5 @@ please test this site in a web browser
 :::
 
 :::teacher-prompt
-**Next up**: You've seen how **Vibe Coding** (Lesson 0001) and **Skill-Driven Engineering** (Lessons 0002–0004) complement each other. Now let's bring in [`google/skills`](https://github.com/google/skills) for our open-ended capstone in [Lesson 0005: Capstone Exercise — Productionizing on Google Cloud with `google/skills`](0005-capstone-exercise-productionizing-with-google-cloud-skills.md)!
+**Next up**: You've seen how **Vibe Coding** (Lesson 0001) and **Skill-Driven Engineering** (Lessons 0002–0004) complement each other. Now let's bring in [`google/skills`](https://github.com/google/skills) for our open-ended capstone in [Lesson 0005: Capstone Exercise — Productionising on Google Cloud with `google/skills`](0005-capstone-exercise-productionizing-with-google-cloud-skills.md)!
 :::

@@ -6,7 +6,7 @@ class: text-center
 <!-- S23 -->
 <div class="space-y-4">
   <h1 class="text-4xl font-extrabold text-white">
-    Productionizing with Google Cloud Skills &amp; Codelab
+    Productionising with Google Cloud Skills &amp; Codelab
   </h1>
   <p class="text-xl font-mono text-cyan-300">
     google/skills &middot; Cloud Run &middot; Cloud Firestore &middot; /teach-code
@@ -17,7 +17,7 @@ class: text-center
 </div>
 
 <!--
-Now let's look at how to productionize what we built. Having created a verified local application with Matt Pocock's engineering workflow skills, what happens when we compose those process skills with the google/skills skill set to take the application to serverless production?
+Now, let's look at how to productionise what we built. Having created a verified local application with Matt Pocock's engineering workflow skills, what happens when we compose those process skills with the google/skills skill set to take the application to serverless production?
 -->
 
 ---
@@ -47,7 +47,7 @@ layout: default
 </ol>
 
 <!--
-One of the best properties of Agent Skills is that they compose orthogonally. Matt Pocock's skills teach the agent how to structure engineering work—interviewing, writing ADRs, designing deep module boundaries, and running TDD. Google Cloud skills teach the agent domain-specific cloud architecture, FinOps cost optimization, and safe gcloud CLI execution.
+One of the best properties of Agent Skills is that they compose orthogonally. Matt Pocock's skills teach the agent how to structure engineering work—interviewing, writing ADRs, designing deep module boundaries, and running TDD. Google Cloud skills teach the agent domain-specific cloud architecture, FinOps cost optimisation, and safe gcloud CLI execution.
 -->
 
 ---
@@ -170,7 +170,7 @@ pub trait InventoryRepository: Send + Sync {
 
   <div class="grid grid-cols-2 gap-4 text-xs pt-2">
     <div class="p-3 rounded-lg bg-gray-900/80 border border-gray-800">
-      <span class="text-emerald-300 font-semibold">Deep Module Payoff:</span> Because Run 2 isolated persistence behind <code>src/db.rs</code>, the Axum + Maud + HTMX handlers (<code>web.rs</code>), value parser (<code>spec_parser.rs</code>), and shortfall math (<code>shopping_list.rs</code>) require <strong>zero changes</strong>.
+      <span class="text-emerald-300 font-semibold">Deep Module Payoff:</span> Because Run 2 isolated persistence behind <code>src/db.rs</code>, the Axum + Maud + HTMX handlers (<code>web.rs</code>), value parser (<code>spec_parser.rs</code>), and shortfall maths (<code>shopping_list.rs</code>) require <strong>zero changes</strong>.
     </div>
     <div class="p-3 rounded-lg bg-gray-900/80 border border-gray-800">
       <span class="text-emerald-300 font-semibold">Dual-Backend Verification:</span> Fast local TDD continues running against <code>TursoRepository</code> (<code>:memory:</code>), while cloud integration tests run against the local Firestore Emulator and deploy via Application Default Credentials.
@@ -179,7 +179,7 @@ pub trait InventoryRepository: Send + Sync {
 </div>
 
 <!--
-Here is the architectural payoff from the Skilled Run's deep module design. Because Run 2 kept all SQL inside src/db.rs and kept the Axum HTMX routes, electrical value normalization, and net shortfall math in pure Rust domain modules, adapting to Cloud Firestore does not touch a single HTML template or route handler. We introduce the InventoryRepository trait seam in ADR 0002, keep TursoRepository for instant in-memory unit tests, and add FirestoreRepository for Cloud Run.
+Here is the architectural payoff from the Skilled Run's deep module design. Because Run 2 kept all SQL inside src/db.rs and kept the Axum HTMX routes, electrical value normalisation, and net shortfall maths in pure Rust domain modules, adapting to Cloud Firestore does not touch a single HTML template or route handler. We introduce the InventoryRepository trait seam in ADR 0002, keep TursoRepository for instant in-memory unit tests, and add FirestoreRepository for Cloud Run.
 -->
 
 ---
@@ -205,7 +205,7 @@ layout: default
   <li>
     <strong class="text-white">
       <CodelabLink path="codelab/lessons/0002-wayfinding-and-domain-modeling-with-skills.html" class="text-cyan-300 hover:underline">
-        Lesson 0002: Wayfinding &amp; Domain Modeling Across /clear Boundaries
+        Lesson 0002: Wayfinding &amp; Domain Modelling Across /clear Boundaries
       </CodelabLink>
     </strong>
     <ul class="list-disc pl-5 mt-0.5 text-gray-300">
@@ -235,7 +235,7 @@ layout: default
   <li>
     <strong class="text-white">
       <CodelabLink path="codelab/lessons/0005-capstone-exercise-productionizing-with-google-cloud-skills.html" class="text-cyan-300 hover:underline">
-        Lesson 0005: Capstone Exercise — Productionizing with Google Cloud Skills
+        Lesson 0005: Capstone Exercise — Productionising with Google Cloud Skills
       </CodelabLink>
     </strong>
     <ul class="list-disc pl-5 mt-0.5 text-gray-300">
@@ -245,7 +245,7 @@ layout: default
 </ol>
 
 <!--
-Everything we explored today is packaged into a self-contained 5-lesson interactive Codelab right inside this repository. Crucially, the Codelab does not ask you to re-type our audio electronics inventory app! Instead, it uses our recorded casts and session traces as a transparent field study, and guides you through testing both Baseline Vibe-Coding and Skill-Driven Engineering on your own project requirements, finishing with an open-ended Google Cloud capstone exercise.
+Everything we explored today is packaged into a self-contained 5-lesson interactive Codelab right inside this repository. Crucially, the Codelab does not ask you to re-type my audio electronics inventory app! Instead, it uses our recorded casts and session traces as a transparent field study, and guides you through testing both Baseline Vibe-Coding and Skill-Driven Engineering on your own project requirements, finishing with an open-ended Google Cloud capstone exercise.
 -->
 
 ---
@@ -288,7 +288,7 @@ layout: default
 
   <div class="p-3.5 rounded-xl bg-gray-900 border border-gray-800">
     <div class="flex items-center justify-between">
-      <div class="text-xs font-mono text-emerald-400 uppercase tracking-wide">Composable Agent Skill Catalogs</div>
+      <div class="text-xs font-mono text-emerald-400 uppercase tracking-wide">Composable Agent Skill Catalogues</div>
       <span class="text-xs font-mono text-gray-500">npx skills@latest add</span>
     </div>
     <div class="text-sm font-bold font-mono mt-1 space-x-4">

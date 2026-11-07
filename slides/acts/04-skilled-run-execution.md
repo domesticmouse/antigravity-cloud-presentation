@@ -69,7 +69,7 @@ layout: default
 </ol>
 
 <!--
-Notice how each verification layer caught a different class of defect. Layer 1, worktree TDD, verified all the domain math—engineering notation parsing, multi-location stock lots, and cross-build net shortfall. Layer 2, the parallel 2-axis code review, caught a subtle spec gap where shopping list overrides weren't persisted across HTMX reloads. And Layer 3, live browser testing via Chrome DevTools MCP, caught two real client-side HTMX DOM swap bugs.
+Notice how each verification layer caught a different class of defect. Layer 1, worktree TDD, verified all the domain maths—engineering notation parsing, multi-location stock lots, and cross-build net shortfall. Layer 2, the parallel 2-axis code review, caught a subtle spec gap where shopping list overrides and installed stock permanence needed tightening. And Layer 3, live browser testing via Chrome DevTools MCP, caught real client-side HTMX DOM swap and trigger-scoping bugs.
 -->
 
 ---
@@ -98,17 +98,17 @@ layout: default
     <div class="text-xs font-mono text-emerald-400 uppercase">Run 2: Skilled Engineering (mattpocock/skills)</div>
     <h3 class="text-lg font-bold text-white">Deliberate Upfront Design, Zero Context Drift</h3>
     <ul class="text-xs text-gray-300 space-y-2 list-disc pl-4">
-      <li><strong>Upfront Questions:</strong> 33 domain-modeling questions across 6 sessions</li>
+      <li><strong>Upfront Questions:</strong> 33 domain-modelling questions across 6 sessions</li>
       <li><strong>Time to Verified Build:</strong> ~140m 1x across 10 <code>/clear</code> sessions + 11 subagents</li>
       <li><strong>Durable Docs on Disk:</strong> <code>GLOSSARY.md</code>, <code>ADR 0001</code>, <code>prototype-ui.html</code>, <code>spec.md</code>, 8 tickets</li>
       <li><strong>Automated Tests:</strong> 41 passing Rust integration &amp; unit tests</li>
-      <li><strong>Post-<code>/clear</code> Audit:</strong> 1 spec gap caught in <code>/code-review</code> + 2 HTMX DOM fixes</li>
+      <li><strong>Post-<code>/clear</code> Audit:</strong> 5 spec/standards nuances caught in <code>/code-review</code> + 4 HTMX DOM fixes</li>
     </ul>
   </div>
 </div>
 
 <!--
-Putting the two runs side by side makes the trade-off crystal clear. The Baseline Run got us a working UI in 16 minutes after just 4 questions, making it unbeatable for quick ideation, but left zero tests and zero documentation on disk. The Skilled Run invested 33 domain-modeling questions across 6 Wayfinder sessions, and in return produced a 41-test Rust and HTMX system with zero context drift across 10 /clear boundaries.
+So, putting the two runs side by side makes the trade-off crystal clear. The Baseline Run got us a working UI in 16 minutes after just 4 questions, making it unbeatable for quick ideation, but left zero tests and zero documentation on disk. The Skilled Run invested 33 domain-modelling questions across 6 Wayfinder sessions, and in return produced a 41-test Rust and HTMX system with zero context drift across 10 /clear boundaries.
 -->
 
 ---

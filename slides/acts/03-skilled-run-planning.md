@@ -6,7 +6,7 @@ class: text-center
 <!-- S11 -->
 <div class="space-y-4">
   <h1 class="text-4xl font-extrabold text-white">
-    The Skilled Run (Part 1): Wayfinding &amp; Domain Modeling
+    The Skilled Run (Part 1): Wayfinding &amp; Domain Modelling
   </h1>
   <p class="text-xl font-mono text-cyan-300">
     mattpocock/skills &middot; /wayfinder &middot; /grilling &middot; /domain-modeling
@@ -17,7 +17,7 @@ class: text-center
 </div>
 
 <!--
-Now let's look at Run 2: the Skilled Run. We start with the exact same project goal, but first we install Matt Pocock's agent skills collection and drive the work through /wayfinder, /grilling, /domain-modeling, /prototype, /to-spec, and /to-tickets.
+Now, let's look at Run 2: the Skilled Run. We start with the exact same project goal, but first we install Matt Pocock's agent skills collection and drive the work through /wayfinder, /grilling, /domain-modeling, /prototype, /to-spec, and /to-tickets.
 -->
 
 ---
@@ -38,9 +38,9 @@ layout: default
     </ul>
   </li>
   <li>
-    <strong class="text-white">Active Domain Modeling (<code>/grilling</code> + <code>/domain-modeling</code>)</strong>
+    <strong class="text-white">Active Domain Modelling (<code>/grilling</code> + <code>/domain-modeling</code>)</strong>
     <ul class="list-disc pl-5 mt-1 space-y-1 text-gray-300">
-      <li>Probes real-world edge cases, challenges overloaded terms, and updates <code>GLOSSARY.md</code> and <code>docs/adr/</code> inline as decisions crystallize.</li>
+      <li>Probes real-world edge cases, challenges overloaded terms, and updates <code>GLOSSARY.md</code> and <code>docs/adr/</code> inline as decisions crystallise.</li>
     </ul>
   </li>
   <li>
@@ -141,7 +141,7 @@ fit: both
 
 <!-- S14 -->
 <!--
-Here in Sessions 2 through 5, we clear the context window before every single ticket and simply type /wayfinder. Each fresh session reads map.md and GLOSSARY.md from disk, claims the next unblocked decision ticket, and grills us on the edge cases: Ticket 01 resolves the 9-category taxonomy and multi-location Stock Lots; Ticket 02 resolves the 5-state BOM fulfillment lifecycle; Ticket 03 resolves CSV import and multi-build shopping list shortfall math; and Ticket 04 locks the 5 deep Rust modules and Turso database architecture.
+Here in Sessions 2 through 5, I clear the context window before every single ticket and simply type /wayfinder. Each fresh session reads map.md and GLOSSARY.md from disk, claims the next unblocked decision ticket, and grills me on the edge cases: Ticket 01 resolves the 9-category taxonomy and multi-location Stock Lots; Ticket 02 resolves the 5-state BOM fulfilment lifecycle; Ticket 03 resolves CSV import and multi-build shopping list shortfall maths; and Ticket 04 locks the 5 deep Rust modules and Turso database architecture.
 -->
 
 ---
@@ -163,11 +163,11 @@ layout: default
   <li>
     <strong class="text-white">5-State <code>Fulfillment Status</code> &amp; Split BOM Allocations</strong>
     <ul class="list-disc pl-5 mt-1 space-y-1 text-gray-300">
-      <li>Models <code>Unresolved</code> &rarr; <code>Matched</code> &rarr; <code>Allocated</code> &rarr; <code>Shortage</code> &rarr; <code>Installed</code>, including splitting a BOM line across two substitute parts.</li>
+      <li>Models <code>Unallocated</code> &rarr; <code>Reserved</code> &rarr; <code>Picked</code> &rarr; <code>Installed</code> &rarr; <code>Included in Kit</code>, including splitting a BOM line across two substitute parts.</li>
     </ul>
   </li>
   <li>
-    <strong class="text-white">Cross-Build <code>Net Shortfall</code> Shopping List Math</strong>
+    <strong class="text-white">Cross-Build <code>Net Shortfall</code> Shopping List Maths</strong>
     <ul class="list-disc pl-5 mt-1 space-y-1 text-gray-300">
       <li>Computes shortages across <em>all</em> selected builds simultaneously so shared stock isn't double-counted when ordering from Mouser or Tayda.</li>
     </ul>
@@ -175,7 +175,7 @@ layout: default
 </ol>
 
 <!--
-Look at the domain richness that emerged from those four Wayfinder sessions—none of which was in our initial prompt! When the agent asked what happens if we have two bags of the same op-amp in different drawers, we arrived at hierarchical Storage Locations and Stock Lots. When it probed partial builds and substitutions, we arrived at a 5-state BOM fulfillment model and cross-build Net Shortfall math.
+Which leads me to an interesting realisation: look at the domain richness that emerged from those four Wayfinder sessions—none of which was in my initial prompt! When the agent asked what happens if I have two bags of the same op-amp in different drawers (because it was faster to order a fresh bag than find the first one), we arrived at hierarchical Storage Locations and Stock Lots. And when it probed partial builds and substitutions, we arrived at a 5-state BOM fulfilment model and cross-build Net Shortfall maths.
 -->
 
 ---

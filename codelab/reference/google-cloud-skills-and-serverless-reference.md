@@ -23,7 +23,7 @@ Table: Key Google Cloud skills for serverless web applications.
 | :--- | :--- | :--- |
 | **`cloud-databases-onboarding`** | Choosing a Google Cloud database ("What database should I use?") or drafting database provisioning plans. | 3-phase **Discovery → Matrix Consultation → Plan-Validate-Execute** workflow; never executes live mutating database writes without human review. |
 | **`google-cloud-waf-cost-optimization`** | Evaluating cloud spend, FinOps alignment, scale-to-zero compute, or regional placement. | Aligns architecture with the **Inform → Optimize → Operate** FinOps lifecycle: serverless scale-to-zero, single-region placement, resource labels, and budget alerts. |
-| **`cloud-run-basics`** | Containerizing and deploying HTTP services, jobs, or worker pools on Cloud Run. | Enforces the **`0.0.0.0:$PORT`** listening contract (`PORT` defaults to `8080`), `--min-instances=0` autoscaling, and Cloud Logging crash diagnostics. |
+| **`cloud-run-basics`** | Containerising and deploying HTTP services, jobs, or worker pools on Cloud Run. | Enforces the **`0.0.0.0:$PORT`** listening contract (`PORT` defaults to `8080`), `--min-instances=0` autoscaling, and Cloud Logging crash diagnostics. |
 | **`gcloud`** | Planning, proposing, or executing any `gcloud` CLI command. | Mandatory **`gcloud help <leaf_command>`** validation before proposing flags; explicit `--project` and `--region`; mandatory `--filter`/`--format`/`--limit` on `list` commands; denylist for autonomous IAM/API/delete operations. |
 | **`firestore-rules-creation`** | Authoring or reviewing `firestore.rules` for Cloud Firestore. | Enforces `rules_version = '2';`, explicit deny-by-default fallback, authentication/ownership checks, and schema validation. |
 
