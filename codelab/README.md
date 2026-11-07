@@ -8,10 +8,10 @@ Rather than asking you to copy-paste our audio electronics inventory app line by
 
 - [Course Index (`index.md`)](./index.md)
 - [Lesson 0001: Baseline Vibe-Coding — Rapid Exploration & Its Trade-Offs (`lessons/0001-baseline-vibe-coding-for-rapid-exploration.md`)](./lessons/0001-baseline-vibe-coding-for-rapid-exploration.md)
-- [Lesson 0002: Wayfinding & Domain Modeling — Durable Intent Across `/clear` (`lessons/0002-wayfinding-and-domain-modeling-with-skills.md`)](./lessons/0002-wayfinding-and-domain-modeling-with-skills.md)
+- [Lesson 0002: Wayfinding & Domain Modelling — Durable Intent Across `/clear` (`lessons/0002-wayfinding-and-domain-modeling-with-skills.md`)](./lessons/0002-wayfinding-and-domain-modeling-with-skills.md)
 - [Lesson 0003: UI Prototyping, Specs & Vertical-Slice Tickets (`lessons/0003-prototyping-specs-and-vertical-slice-tickets.md`)](./lessons/0003-prototyping-specs-and-vertical-slice-tickets.md)
 - [Lesson 0004: Worktree TDD, Two-Axis Code Review & Live Browser Verification (`lessons/0004-worktree-tdd-code-review-and-browser-verification.md`)](./lessons/0004-worktree-tdd-code-review-and-browser-verification.md)
-- [Lesson 0005: Capstone Exercise — Productionizing on Google Cloud with `google/skills` (`lessons/0005-capstone-exercise-productionizing-with-google-cloud-skills.md`)](./lessons/0005-capstone-exercise-productionizing-with-google-cloud-skills.md)
+- [Lesson 0005: Capstone Exercise — Productionising on Google Cloud with `google/skills` (`lessons/0005-capstone-exercise-productionizing-with-google-cloud-skills.md`)](./lessons/0005-capstone-exercise-productionizing-with-google-cloud-skills.md)
 
 ## Reference Sheets & Printable Guides
 

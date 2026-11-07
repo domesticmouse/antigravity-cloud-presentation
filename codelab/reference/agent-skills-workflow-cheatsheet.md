@@ -59,7 +59,7 @@ When you are ready to build for ongoing maintenance, install `mattpocock/skills`
 flowchart LR
   S0["npx skills@latest add<br/>mattpocock/skills"] --> S1["Session 1:<br/>/wayfinder &lt;idea&gt;<br/>(GLOSSARY + ADR + map)"]
   S1 --> S2["Sessions 2..N:<br/>/wayfinder<br/>(Grilling &amp; /prototype)"]
-  S2 --> S3["Session N+1:<br/>/to-spec<br/>(Synthesize spec.md)"]
+  S2 --> S3["Session N+1:<br/>/to-spec<br/>(Synthesise spec.md)"]
   S3 --> S4["Session N+2:<br/>/to-tickets<br/>(Vertical slices)"]
   S4 --> S5["Session N+3:<br/>/implement-spec<br/>(Worktree TDD + Review)"]
   S5 --> S6["Session N+4:<br/>Browser Verification<br/>(Chrome DevTools MCP)"]
@@ -71,7 +71,7 @@ Table: Reference of core `mattpocock/skills` commands and the durable artifacts 
 | **`/wayfinder <idea>`** | Interviews you to lock the **Destination**, standing constraints, and initial decision frontier. | `GLOSSARY.md`, `docs/adr/0001-*.md`, `.scratch/<app>/map.md`, `.scratch/<app>/issues/01..N.md` |
 | **`/wayfinder`** *(subsequent sessions)* | Claims the next unblocked decision ticket (`grilling`, `prototype`, `research`, or `task`) and resolves it. | `.scratch/<app>/decisions/01..N.md`, updated `GLOSSARY.md` & `map.md` |
 | **`/prototype`** *(invoked on prototype tickets)* | Builds a cheap, self-contained HTML prototype with multiple layout variants (`?variant=a\|b\|c`) to react to in a browser. | `.scratch/<app>/prototype-ui.html` |
-| **`/to-spec`** | Synthesizes `GLOSSARY.md`, ADRs, and all resolved Wayfinder decisions into a single canonical specification. | `.scratch/<app>/spec.md` |
+| **`/to-spec`** | Synthesises `GLOSSARY.md`, ADRs, and all resolved Wayfinder decisions into a single canonical specification. | `.scratch/<app>/spec.md` |
 | **`/to-tickets`** | Breaks `spec.md` into dependency-ordered vertical-slice implementation tickets with explicit acceptance criteria. | `.scratch/<app>/issues/01..M-*.md` |
 | **`/implement-spec`** | Executes unblocked tickets in isolated git worktrees using Red-Green-Refactor `/tdd` (running independent waves in parallel), then runs 2-axis `/code-review`. | Tested application source code, migrations, and resolved ticket records |
 | **`/code-review`** | Spawns two parallel review subagents—**Standards Axis** (`GLOSSARY.md`, ADRs, deep modules) and **Spec Axis** (`spec.md` compliance)—and fixes discrepancies. | Verified, spec-compliant codebase |

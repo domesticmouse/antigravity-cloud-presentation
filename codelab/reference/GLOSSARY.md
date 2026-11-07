@@ -29,13 +29,13 @@ Working with an AI coding agent in an exploratory, conversational loop where the
 _Avoid_: Sloppy coding, unprompted generation
 
 **Skill-Driven Engineering**:
-Shaping an AI coding agent with explicit, on-demand workflow and domain skills (`SKILL.md`) so that discovery, domain modeling (`GLOSSARY.md`, ADRs), UI prototyping, specification, vertical-slice TDD, and code review happen as distinct, verifiable stages recorded in the repository.
+Shaping an AI coding agent with explicit, on-demand workflow and domain skills (`SKILL.md`) so that discovery, domain modelling (`GLOSSARY.md`, ADRs), UI prototyping, specification, vertical-slice TDD, and code review happen as distinct, verifiable stages recorded in the repository.
 _Avoid_: Waterfall prompting, heavy process
 
 ## 2. Recording & Inspection Artifacts
 
 **Terminal Cast**:
-An `asciinema` v3 recording of a terminal session (`01-baseline.cast`, `02-skilled.cast`), sanitized and annotated with `"m"` chapter stop-point markers for interactive playback.
+An `asciinema` v3 recording of a terminal session (`01-baseline.cast`, `02-skilled.cast`), sanitised and annotated with `"m"` chapter stop-point markers for interactive playback.
 _Avoid_: Video, screen recording
 
 **Session Trace**:
@@ -43,7 +43,7 @@ The exported Markdown conversation log (`artifacts/traces/*`) from Antigravity's
 _Avoid_: Chat history, transcript dump
 
 **Canonical Q&A**:
-The consistent set of operator domain preferences used when answering `agy`'s clarifying questions across runs so that architectural differences stem from the installed skills rather than divergent requirements.
+The consistent set of domain preferences used when answering `agy`'s clarifying questions across runs so that architectural differences stem from the installed skills rather than divergent requirements.
 _Avoid_: Cheat sheet, prompt script
 
 **Codelab**:
@@ -75,11 +75,11 @@ _Avoid_: Horizontal layer task
 ## 4. Case Study Domain (Audio Electronics Workbench)
 
 **Component**:
-An individual electronic part in the catalog (such as a `TL072` op-amp, `4k7` resistor, or `100nF` capacitor), characterized by category, package mounting style (`SMT` or `THT`), raw and normalized electrical values, and stock across one or more **Stock Lots**.
+An individual electronic part in the catalogue (such as a `TL072` op-amp, `4k7` resistor, or `100nF` capacitor), characterised by category, package mounting style (`SMT` or `THT`), raw and normalised electrical values, and stock across one or more **Stock Lots**.
 _Avoid_: Item, product
 
 **Storage Location**:
-A physical place where parts live on the bench. Modeled as a flat text label in the **Baseline Run**, and as a self-referential parent/child hierarchy (`Binder` → `Bag` → `Sub-Bag`) in the **Skilled Run**.
+A physical place where parts live on the bench. Modelled as a flat text label in the **Baseline Run**, and as a self-referential parent/child hierarchy (`Binder` → `Bag` → `Sub-Bag`) in the **Skilled Run**.
 _Avoid_: Warehouse bin
 
 **Stock Lot**:

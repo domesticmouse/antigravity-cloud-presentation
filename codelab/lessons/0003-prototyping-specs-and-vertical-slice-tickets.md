@@ -3,10 +3,10 @@ title: "UI Prototyping, Specs & Vertical-Slice Tickets"
 page_title: "Lesson 0003 — UI Prototyping, Specs & Vertical-Slice Tickets"
 nav_id: "lesson-0003"
 badge: "Skilled Run • Sessions 6–8 (02-skilled.cast)"
-subtitle: "See how /prototype lets you test-drive three UI layout variants before committing to backend templates—and how /to-spec and /to-tickets turn Wayfinder decisions into parallelizable vertical slices."
+subtitle: "See how /prototype lets you test-drive three UI layout variants before committing to backend templates—and how /to-spec and /to-tickets turn Wayfinder decisions into parallelisable vertical slices."
 card:
   title: "**UI Prototyping, Specs & Vertical-Slice Tickets**"
-  summary: "Walk through Sessions 6–8 of Run 2 (02-skilled.cast): exploring Variants A/B/C with /prototype, synthesizing spec.md (/to-spec), and slicing 8 vertical tickets (/to-tickets)."
+  summary: "Walk through Sessions 6–8 of Run 2 (02-skilled.cast): exploring Variants A/B/C with /prototype, synthesising spec.md (/to-spec), and slicing 8 vertical tickets (/to-tickets)."
 ---
 
 ## 1. Borrowing the Best Part of Vibe Coding: Cheap Visual Prototypes (`/prototype`) {#ui-prototyping}
@@ -16,35 +16,35 @@ One fair criticism of traditional "spec-first" engineering is that **humans are 
 That is why `/wayfinder` includes a dedicated **`prototype`** ticket type (powered by the `/prototype` skill). Instead of choosing a single UI layout unprompted (like the **Baseline Run** did) or debating UI layouts purely in Markdown, **Session 6 (Stops 81–92)** of the **Skilled Run** built a self-contained HTML prototype file—[`.scratch/audio-inventory/prototype-ui.html`](https://github.com/domesticmouse/antigravity-cloud-presentation/blob/main/experiments/audio_inventory_skilled/.scratch/audio-inventory/prototype-ui.html)—implementing **three complete, interactive layout variants** in a single file:
 
 Table: The three interactive UI variants generated during Session 6 (Ticket 05).
-| Variant | Layout Architecture | Best For... | Operator Verdict (Stop 87) |
+| Variant | Layout Architecture | Best For... | My Verdict (Stop 87) |
 | :---: | :--- | :--- | :--- |
 | **Variant A** (`?variant=a`) | **Full-Width Dense Workbench Table + 340px Right-Hand Inspector Drawer (`#inspector`)** | Scanning wide parametric columns while inspecting/merging multi-location **Stock Lots** in a slide-out drawer. | **Selected (`A`)** |
-| **Variant B** (`?variant=b`) | **Three-Pane IDE Layout** (Left location/kit tree + center table + right inspector) | Deep folder navigation, at the cost of horizontal table width on 13" laptop screens. | Rejected (too cramped horizontally) |
-| **Variant C** (`?variant=c`) | **Split-Screen Kitting View** (Kit BOM on left + live Catalog search on right + Bench HUD) | Dedicated side-by-side kitting, inspired by the ** Active Bench Checklist** mode. | Merged checklist ideas into Variant A's Builds tab |
+| **Variant B** (`?variant=b`) | **Three-Pane IDE Layout** (Left location/kit tree + centre table + right inspector) | Deep folder navigation, at the cost of horizontal table width on 13" laptop screens. | Rejected (too cramped horizontally) |
+| **Variant C** (`?variant=c`) | **Split-Screen Kitting View** (Kit BOM on left + live Catalog search on right + Bench HUD) | Dedicated side-by-side kitting, inspired by the **Active Bench Checklist** mode. | Merged checklist ideas into Variant A's Builds tab |
 
-At **Stop 85**, the operator prompted:
+At **Stop 85**, I prompted:
 
 ```text caption="Stop 85 of 02-skilled.cast — Opening the 3-variant prototype in Chrome"
 please open the prototype in a browser
 ```
 
-By clicking through Variants A, B, and C live in Chrome before a single line of Rust or Maud HTML template code was written, the operator got the **visual speed of vibe coding** combined with the **deliberate choice of engineering design**!{{sidenote:Notice how `/prototype` bridges the gap between vibe coding and engineering: you still get a clickable UI in minutes, but it's explicitly framed as a cheap, disposable decision artifact with 3 options to compare rather than the final production codebase.}}
+By clicking through Variants A, B, and C live in Chrome before a single line of Rust or Maud HTML template code was written, I got the **visual speed of vibe coding** combined with the **deliberate choice of engineering design**!{{sidenote:Notice how `/prototype` bridges the gap between vibe coding and engineering: you still get a clickable UI in minutes, but it's explicitly framed as a cheap, disposable decision artifact with 3 options to compare rather than the final production codebase.}}
 
 ---
 
-## 2. Synthesizing the Canonical Specification (`/to-spec`, Session 7) {#to-spec}
+## 2. Synthesising the Canonical Specification (`/to-spec`, Session 7) {#to-spec}
 
 Once Ticket 05 resolved at **Stop 92**, every decision on the Wayfinder map was complete.
 
-In **Session 7 (Stops 93–97)**, the operator cleared the session (`/clear`) and ran:
+In **Session 7 (Stops 93–97)**, I cleared the session (`/clear`) and ran:
 
-```text caption="Stop 94 of 02-skilled.cast — Synthesizing the specification"
+```text caption="Stop 94 of 02-skilled.cast — Synthesising the specification"
 /to-spec
 ```
 
 Why not jump straight from 5 separate decision tickets into coding? Because decision tickets record the *journey* (questions asked, options rejected), whereas an implementer needs a **single coherent snapshot of truth**.
 
-`/to-spec` read `GLOSSARY.md`, `ADR 0001`, `map.md`, and all 5 resolved decision records (`decisions/01..05.md`) and synthesized [`.scratch/audio-inventory/spec.md`](https://github.com/domesticmouse/antigravity-cloud-presentation/blob/main/experiments/audio_inventory_skilled/.scratch/audio-inventory/spec.md) containing:
+`/to-spec` read `GLOSSARY.md`, `ADR 0001`, `map.md`, and all 5 resolved decision records (`decisions/01..05.md`) and synthesised [`.scratch/audio-inventory/spec.md`](https://github.com/domesticmouse/antigravity-cloud-presentation/blob/main/experiments/audio_inventory_skilled/.scratch/audio-inventory/spec.md) containing:
 - **42 numbered user stories** across Component Catalog, Storage Locations, Stock Lots, Kit Builds, Active Bench Mode, CSV Imports, Shopping Lists, and ZIP Backup.
 - **Complete SQLite/Turso DDL schema** (`storage_locations`, `components`, `stock_lots`, `kit_builds`, `bom_lines`, `bench_log_entries`, `kit_attachments`).
 - **Exact mathematical and state-machine invariants** (including the 5-state **Fulfillment Status** transition table and **Installed Stock Permanence**).
@@ -53,7 +53,7 @@ Why not jump straight from 5 separate decision tickets into coding? Because deci
 
 ## 3. Slicing Vertical Implementation Tickets (`/to-tickets`, Session 8) {#to-tickets}
 
-In **Session 8 (Stops 98–102)**, the operator ran `/clear` and invoked:
+In **Session 8 (Stops 98–102)**, I ran `/clear` and invoked:
 
 ```text caption="Stop 99 of 02-skilled.cast — Breaking spec.md into vertical slices"
 /to-tickets
@@ -64,7 +64,7 @@ Instead of slicing horizontally by technical layer (e.g., *"Ticket 1: Write all 
 ```mermaid caption="Figure 3.1: The 8 vertical-slice implementation tickets generated by /to-tickets in Session 8 (Stops 98–102)."
 flowchart TD
   T1["Ticket 01: Workspace Foundation,<br/>spec_parser &amp; Storage Location Tree"] --> T2["Ticket 02: Component Catalog,<br/>Parametric Search &amp; Stock Lots"]
-  T2 --> T3["Ticket 03: Kit Builds, BOM Matching<br/>&amp; 5-State Stock Fulfillment"]
+  T2 --> T3["Ticket 03: Kit Builds, BOM Matching<br/>&amp; 5-State Stock Fulfilment"]
   T3 --> T4["Ticket 04: BOM Substitutions,<br/>Partial Allocations, Split &amp; Clone"]
   T3 --> T5["Ticket 05: Active Bench Checklist,<br/>Attachments &amp; Bench Logs"]
   T3 --> T6["Ticket 06: Staged CSV &amp;<br/>Clipboard Imports"]
@@ -90,7 +90,7 @@ Fill in the missing skill commands and dependency structure used in Sessions 6�
 # 1. When a Wayfinder ticket has Type: prototype, build a multi-variant HTML file via:
 # Skill: {{blank:/prototype||prototype|Use the skill that builds concrete UI/logic artifacts to react to|/prototype|12}}
 
-# 2. Once all Wayfinder decision tickets are closed, synthesize them into spec.md:
+# 2. Once all Wayfinder decision tickets are closed, synthesise them into spec.md:
 # Command: {{blank:/to-spec|Use the slash command that compiles decisions into spec.md|/to-spec|10}}
 
 # 3. Slice spec.md into end-to-end testable implementation tickets with Blocked by edges:
@@ -98,8 +98,8 @@ Fill in the missing skill commands and dependency structure used in Sessions 6�
 ```
 
 :::prompts
-hint: "Use `/prototype` for UI exploration, `/to-spec` to synthesize `spec.md`, and `/to-tickets` to create vertical implementation tickets."
-success: "Nice work! That three-step bridge (`/prototype` → `/to-spec` → `/to-tickets`) turns open-ended design conversations into an unambiguous, parallelizable build graph."
+hint: "Use `/prototype` for UI exploration, `/to-spec` to synthesise `spec.md`, and `/to-tickets` to create vertical implementation tickets."
+success: "Nice work! That three-step bridge (`/prototype` → `/to-spec` → `/to-tickets`) turns open-ended design conversations into an unambiguous, parallelisable build graph."
 :::
 :::
 
@@ -116,7 +116,7 @@ Try running `/prototype`, `/to-spec`, and `/to-tickets` on your own project idea
 # 1. Ask agy to prototype 2–3 distinct UI layout variants in a single HTML file:
 /prototype Create a self-contained HTML prototype with 3 switchable layout variants (?variant=a|b|c) for my project's main screen.
 
-# 2. After resolving your Wayfinder tickets, clear context and synthesize the spec:
+# 2. After resolving your Wayfinder tickets, clear context and synthesise the spec:
 /clear
 /to-spec
 

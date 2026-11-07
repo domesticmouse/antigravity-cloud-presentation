@@ -22,7 +22,7 @@ class: text-center
 </div>
 
 <!--
-Welcome everyone! Today we are exploring two very different ways of working with an AI coding agent like Google Antigravity: rapid, exploratory vibe coding on one hand, and structured, skill-driven engineering on the other. Rather than arguing that one approach is always right and the other is always wrong, we recorded both approaches with full terminal recordings and conversation traces—followed by a lead-in to productionizing on Google Cloud with the google/skills skill set—so you can see exactly when each workflow shines and where it breaks down.
+Welcome everyone! Today we are exploring two very different ways of working with an AI coding agent like Google Antigravity: rapid, exploratory vibe coding on one hand, and structured, skill-driven engineering on the other. Now, rather than arguing that one approach is always right and the other is always wrong, I recorded both approaches with full terminal recordings and conversation traces—followed by a lead-in to productionising on Google Cloud with the google/skills skill set—so you can see first-hand when each workflow shines and where it breaks down.
 -->
 
 ---
@@ -89,7 +89,7 @@ layout: default
 </div>
 
 <!--
-Here is the tension every developer hits with agentic coding tools. Generating two thousand lines of working code in fifteen minutes is now effortless. But when every design decision and domain edge case lives only inside a fleeting chat transcript, the moment you clear the context window or come back next week, you face comprehension debt. Our goal today is to look at how to treat engineering ceremony as a dial—using fast vibe coding when exploring, and turning up structured skills when building for longevity.
+Here is the tension every developer hits with agentic coding tools. Generating two thousand lines of working code in fifteen minutes is now effortless. But, when every design decision and domain edge case lives only inside a fleeting chat transcript, the moment you clear the context window—or come back next week—you hit comprehension debt. Turns out, the code works right up until you need to change it. So, our goal today is to look at how to treat engineering ceremony as a dial: using fast vibe coding when we are exploring, and turning up structured skills when we are building something meant to last.
 -->
 
 ---
@@ -189,7 +189,7 @@ layout: default
 </div>
 
 <!--
-So what are we actually going to build to test this thesis? Let me set the scene. My study at home is full of audio electronics components—SMD binders of cut-tape resistors and capacitors, multi-drawer cabinets of TL072 and TL074 op-amps, and bags of potentiometers and jacks for DIY guitar pedals and synth modules. Half the time, it's faster to re-order a twenty-cent part from Mouser or Tayda than hunt through forty drawers—and when I plan three pedal builds at once, I need to know which kits I can actually fulfill from stock on hand and what my true net shortfall is. It sounds like a simple CRUD app at first glance, but underneath are rich domain edge cases.
+So, what are we actually going to build to test this thesis? Let me set the scene. My study at home is full of audio electronics components—SMD binders of cut-tape resistors and capacitors, multi-drawer cabinets of TL072 and TL074 op-amps, and bags of potentiometers and jacks for DIY guitar pedals and Eurorack synth modules. Half the time, it's faster to re-order a twenty-cent part from Mouser or Tayda than hunt through forty drawers. And when I plan three pedal builds at once, I need to know which kits I can actually fulfil from stock on hand and what my true net shortfall is. Turns out, what looks like a simple CRUD app at first glance is full of gnarly domain edge cases.
 -->
 
 ---
@@ -205,7 +205,7 @@ layout: default
   <li>
     <strong class="text-white">Rules (<code>AGENTS.md</code> &amp; Global User Rules) — Always-On Guardrails</strong>
     <ul class="list-disc pl-5 mt-1 space-y-1 text-gray-300">
-      <li>Loaded into every turn automatically; ideal for short behavioral invariants like <em>"Ask clarifying questions, one at a time."</em></li>
+      <li>Loaded into every turn automatically; ideal for short behavioural invariants like <em>"Ask clarifying questions, one at a time."</em></li>
       <li>Rules tell the agent to pause and ask, but they do not teach a multi-stage methodology or define artifact formats.</li>
     </ul>
   </li>
@@ -259,5 +259,5 @@ layout: default
 </ol>
 
 <!--
-Here is our roadmap. In Approach 1, the Baseline Run, we let Antigravity vibe-code the application with only our global clarifying-question rule. In Approach 2, the Skilled Run, we install Matt Pocock's workflow skills and watch how ten fresh-context sessions build a deeply modeled, test-driven Rust and HTMX application. Finally, we lead into how to layer in the google/skills skill set to take that architecture to scale-to-zero Cloud Run and Firestore, and walk through the interactive Codelab where you can try these workflows on your own ideas.
+Here is our roadmap. In Approach 1, the Baseline Run, we let Antigravity vibe-code the application with only my global clarifying-question rule. In Approach 2, the Skilled Run, we install Matt Pocock's workflow skills and watch how ten fresh-context sessions build a deeply modelled, test-driven Rust and HTMX application. Finally, we lead into how to layer in the google/skills skill set to take that architecture to scale-to-zero Cloud Run and Firestore, and walk through the interactive Codelab where you can try these workflows on your own ideas.
 -->

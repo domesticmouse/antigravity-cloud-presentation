@@ -18,9 +18,9 @@ That is where **Vibe Coding** shines:
 - You let the agent propose a sensible local tech stack and generate a working prototype immediately.
 - Within 15–20 minutes, you can click through real tables, forms, and seed data in your browser and react to what feels right or missing.
 
-In **Run 1** of our experiment (the **Baseline Run**, recorded in [`recordings/final/01-baseline.cast`](https://github.com/domesticmouse/antigravity-cloud-presentation/blob/main/recordings/final/01-baseline.cast)), we started in an empty directory (`~/Demos/audio-inventory-experiment/audio_inventory_baseline`) with **zero repository skills installed**.
+In **Run 1** of this experiment (the **Baseline Run**, recorded in [`recordings/final/01-baseline.cast`](https://github.com/domesticmouse/antigravity-cloud-presentation/blob/main/recordings/final/01-baseline.cast)), I started in an empty directory (`~/Demos/audio-inventory-experiment/audio_inventory_baseline`) with **zero repository skills installed**.
 
-Yet `agy` didn't blindly hallucinate a random app on turn one. Why? Because of a **two-line Global Rule** in `$HOME/.gemini/config/AGENTS.md`:
+Now, `agy` didn't blindly hallucinate a random app on turn one. Why? Because of a **two-line Global Rule** in `$HOME/.gemini/config/AGENTS.md`:
 
 ```markdown caption="~/.gemini/config/AGENTS.md — The two-line Global Rule active during the Baseline Run"
 You are a helpful assistant.
@@ -41,34 +41,34 @@ Let's walk through what happened across the **17 chapter stop points** of `01-ba
 Table: Stop-point timeline of the Baseline Run (`01-baseline.cast`).
 | Stops | 1x Time | Phase | What Happened in the Terminal |
 | :---: | :---: | :--- | :--- |
-| **1–3** | `0:01`–`0:06` | **Launch & Prompt** | Operator runs `agy` in an empty folder and submits: *"I'd like to build a web application to track my audio electronics components inventory and DIY kit builds."* |
-| **4–9** | `0:27`–`1:47` | **4 Clarifying Questions** | Guided by the global rule, `agy` calls `ask_question` 4 times: **Q1** Stack (`Node.js + SQLite`), **Q2** Features + operator write-in (`Allocate parts to a project`), **Q3** Part allocation (`On Hand` vs. `Allocated` vs. `Available`), and **Q4** Audio focus (`Eurorack` + `Guitar Pedals`). |
+| **1–3** | `0:01`–`0:06` | **Launch & Prompt** | I run `agy` in an empty folder and submit: *"I'd like to build a web application to track my audio electronics components inventory and DIY kit builds."* |
+| **4–9** | `0:27`–`1:47` | **4 Clarifying Questions** | Guided by the global rule, `agy` calls `ask_question` 4 times: **Q1** Stack (`Node.js + SQLite`), **Q2** Features + write-in (`Allocate parts to a project`), **Q3** Part allocation (`On Hand` vs. `Allocated` vs. `Available`), and **Q4** Audio focus (`Eurorack` + `Guitar Pedals`). |
 | **10–11** | `1:47`–`16:05` | **One-Shot Build** | In a single 14-minute turn, `agy` checks `modern-web-guidance`, writes `package.json`, `db.js`, `server.js`, and `public/{index.html,styles.css,app.js}` (~2,500 lines), seeds 26 audio **Components** and 3 **Kits**, and runs a quick `node -e` smoke check. |
-| **12** | `16:09` | **Context Reset (`/clear`)** | Operator runs `/clear` to test what survives when conversational memory is wiped. |
-| **13–15** | `16:10`–`25:01` | **Review & Fix Pass** | Operator prompts `Please review the codebase` → `agy` uncovers **8 bugs** in its own one-shot build → operator prompts `please fix`. |
-| **16–17** | `25:10`–`30:07` | **Browser Verification** | Operator prompts `please test this site in a web browser` → `agy` drives Chrome via `chrome-devtools-mcp`, catching and fixing a missing favicon `404` and Chrome autofill warnings. |
+| **12** | `16:09` | **Context Reset (`/clear`)** | I run `/clear` to test what survives when conversational memory is wiped. |
+| **13–15** | `16:10`–`25:01` | **Review & Fix Pass** | I prompt `Please review the codebase` → `agy` uncovers **8 bugs** in its own one-shot build → I prompt `please fix`. |
+| **16–17** | `25:10`–`30:07` | **Browser Verification** | I prompt `please test this site in a web browser` → `agy` drives Chrome via `chrome-devtools-mcp`, catching and fixing a missing favicon `404` and Chrome autofill warnings. |
 
 ### What Went Right in Session 1?
 
 Look at **Stops 5–7** in the cast:
-1. In **Q2** (Stop 6), the operator unchecked *"Automatic stock deduction"* and typed a custom write-in answer: **`Allocate parts to a project`**.
+1. In **Q2** (Stop 6), I unchecked *"Automatic stock deduction"* and typed a custom write-in answer: **`Allocate parts to a project`**.
 2. In **Q3** (Stop 7), `agy` immediately adapted its next question to disambiguate what "allocate" meant, proposing:
    > `Track 'Total On Hand' vs. 'Allocated' vs. 'Available' — allocating reserves parts for a project (reducing Available stock), and you can un-allocate or finalize/consume them when built`
-3. By **Stop 11** (`16m 05s` elapsed), the operator had a working local web app ("PatchBay & Bench") running on `http://localhost:3000` using Node's built-in `node:sqlite` (`DatabaseSync`), complete with `<dialog closedby="any">` modals and responsive `@container` tables picked up from the user's ambient `modern-web-guidance` plugin.
+3. By **Stop 11** (`16m 05s` elapsed), I had a working local web app ("PatchBay & Bench") running on `http://localhost:3000` using Node's built-in `node:sqlite` (`DatabaseSync`), complete with `<dialog closedby="any">` modals and responsive `@container` tables picked up from my ambient `modern-web-guidance` plugin.
 
-If your goal was **rapid exploration**—to see what a workbench inventory UI feels like in under 20 minutes—Session 1 was a massive success!
+So, if your goal is **rapid exploration**—to see what a workbench inventory UI feels like in under 20 minutes—Session 1 was a massive win!
 
 ---
 
 ## 3. What Happened After `/clear`? The Hidden Cost of One-Shot Builds {#after-clear}
 
-At **Stop 12**, the operator typed `/clear` and asked the fresh session:
+But, at **Stop 12**, I typed `/clear` and asked the fresh session:
 
 ```text caption="Stop 13 — Prompting a fresh session after /clear"
 Please review the codebase
 ```
 
-Because Session 1 generated ~2,500 lines of SQL, Express routes, and DOM manipulation in a single unverified pass—and wrote **zero durable domain documents** (`0` `GLOSSARY.md` files, `0` ADRs, `0` automated test files)—Session 2 found **8 concrete bugs** hiding beneath the surface:
+Turns out, because Session 1 generated ~2,500 lines of SQL, Express routes, and DOM manipulation in a single unverified pass—and wrote **zero durable domain documents** (`0` `GLOSSARY.md` files, `0` ADRs, `0` automated test files)—Session 2 found **8 concrete bugs** hiding beneath the surface:
 
 ### Bug Pattern 1: Multi-Line BOM Stock Over-Counting (`db.js`)
 
@@ -200,15 +200,15 @@ agy
       correct: true
       explain: "Correct! That two-line global rule in `~/.gemini/config/AGENTS.md` triggered the `ask_question` discovery interview."
     - letter: "C"
-      text: "Because Node SQLite refuses to initialize a database schema without four prompts."
+      text: "Because Node SQLite refuses to initialise a database schema without four prompts."
       correct: false
-      explain: "`node:sqlite` is just a library; the questioning behavior came entirely from the global `AGENTS.md` instruction."
+      explain: "`node:sqlite` is just a library; the questioning behaviour came entirely from the global `AGENTS.md` instruction."
     - letter: "D"
       text: "Because Chrome DevTools MCP blocked the terminal until interactive options were chosen."
       correct: false
       explain: "Chrome DevTools MCP was only invoked at the end of Session 2 during live browser testing."
 
-- question: "What happened right after the operator ran `/clear` at Stop 12 of the Baseline Run?"
+- question: "What happened right after I ran `/clear` at Stop 12 of the Baseline Run?"
   wrong_hint: "Consider where the domain rules (`On Hand` vs. `Allocated` vs. `Available`) were stored during Session 1."
   options:
     - letter: "A"
@@ -230,5 +230,5 @@ agy
 :::
 
 :::teacher-prompt
-**Next up**: Now that you've seen how fast Baseline Vibe-Coding is for initial exploration—and where it hits a wall after `/clear`—head to [Lesson 0002: Wayfinding & Domain Modeling — Durable Intent Across `/clear`](0002-wayfinding-and-domain-modeling-with-skills.md) to see what changes when we install `mattpocock/skills`!
+**Next up**: Now that you've seen how fast Baseline Vibe-Coding is for initial exploration—and where it hits a wall after `/clear`—head to [Lesson 0002: Wayfinding & Domain Modelling — Durable Intent Across `/clear`](0002-wayfinding-and-domain-modeling-with-skills.md) to see what changes when we install `mattpocock/skills`!
 :::

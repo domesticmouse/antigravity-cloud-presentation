@@ -1,11 +1,11 @@
 ---
-title: "Capstone Exercise: Productionizing on Google Cloud with google/skills"
+title: "Capstone Exercise: Productionising on Google Cloud with google/skills"
 page_title: "Lesson 0005 — Capstone Exercise with google/skills"
 nav_id: "lesson-0005"
 badge: "Production Run • Open-Ended Reader Capstone"
 subtitle: "Compose mattpocock/skills with Google Cloud's official agent skills (google/skills) to take your own application—or the Skilled Run workbench—to scale-to-zero Cloud Run and Cloud Firestore."
 card:
-  title: "**Capstone Exercise: Productionizing on Google Cloud with `google/skills`**"
+  title: "**Capstone Exercise: Productionising on Google Cloud with `google/skills`**"
   summary: "Learn how google/skills (cloud-databases-onboarding, google-cloud-waf-cost-optimization, cloud-run-basics, gcloud) compose with /wayfinder, then apply them to your own project."
 ---
 
@@ -113,10 +113,10 @@ success: "Excellent! Those exact rules from `cloud-run-basics` and `gcloud` prev
 
 ## 5. Open-Ended Reader Capstone: Take Your Own Project to the Cloud {#verify-0005}
 
-Now the baton is yours! We deliberately leave the **Production Run** as an open-ended exercise so you can apply it to **your own application** (or to a clone of `experiments/audio_inventory_skilled/`):
+Now, the baton is yours! I deliberately left the **Production Run** as an open-ended exercise so you can apply it to **your own application** (or to a clone of `experiments/audio_inventory_skilled/`):
 
 :::verify id="verify-0005" title="Capstone Exercise: Plan & Validate a Cloud Migration with google/skills" badge="Your Own Project • mattpocock/skills + google/skills"
-In your own project workspace (or a copy of `experiments/audio_inventory_skilled/`), install `google/skills` and use `/wayfinder` to chart a productionization map:
+In your own project workspace (or a copy of `experiments/audio_inventory_skilled/`), install `google/skills` and use `/wayfinder` to chart a productionisation map:
 
 ```bash caption="Composing mattpocock/skills and google/skills on your own project"
 # 1. Inside your project directory, add the official Google Cloud skills:
@@ -126,7 +126,7 @@ npx skills@latest add google/skills
 agy
 
 # Inside agy:
-/wayfinder I'd like to adapt and productionize this application for a low-volume, low-cost deployment on Google Cloud.
+/wayfinder I'd like to adapt and productionise this application for a low-volume, low-cost deployment on Google Cloud.
 ```
 
 - [ ] Watch how `agy` combines `/wayfinder` and `/grilling` with `cloud-databases-onboarding` and `google-cloud-waf-cost-optimization` to interview you about your traffic, data model, and budget constraints.
@@ -140,7 +140,7 @@ agy
 ## 6. Retrieval Practice {#quiz-0005}
 
 :::quiz id="quiz-0005" title="Retrieval Practice: Composing Workflow & Cloud Skills" badge="3 Questions • Equal-Length Options"
-- question: "Why does `cloud-run-basics` emphasize listening on `0.0.0.0` and reading `$PORT` instead of `127.0.0.1:3000`?"
+- question: "Why does `cloud-run-basics` emphasise listening on `0.0.0.0` and reading `$PORT` instead of `127.0.0.1:3000`?"
   wrong_hint: "Consider how Cloud Run's ingress proxy routes HTTP requests into your container instance."
   options:
     - letter: "A"

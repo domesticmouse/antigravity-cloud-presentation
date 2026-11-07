@@ -61,13 +61,13 @@ title: Baseline Run Setup — Global Rule + Ambient Web Guidance
       <span class="text-cyan-300 font-semibold">4 Surface-Level Questions:</span> Because the global rule says to ask one question at a time, the agent uses <code>ask_question</code> four times (storage stack, feature checklist + write-in, part allocation, and DIY focus) before jumping straight into code.
     </div>
     <div class="p-3 rounded-lg bg-gray-900/80 border border-gray-800">
-      <span class="text-cyan-300 font-semibold">Ambient Skill Activation:</span> Without a domain-modeling or spec skill, the agent activates its built-in <code>modern-web-guidance</code> skill and builds <strong>PatchBay &amp; Bench</strong> in Node.js, Express, and <code>node:sqlite</code>.
+      <span class="text-cyan-300 font-semibold">Ambient Skill Activation:</span> Without a domain-modelling or spec skill, the agent activates its built-in <code>modern-web-guidance</code> skill and builds <strong>PatchBay &amp; Bench</strong> in Node.js, Express, and <code>node:sqlite</code>.
     </div>
   </div>
 </div>
 
 <!--
-In the Baseline Run, two things steer the agent. First, our global user rule tells it to ask clarifying questions one at a time. Second, once those questions are answered, it activates its built-in modern-web-guidance skill for dark-mode UI polish. Notice what is missing: nothing tells the agent to challenge domain terms, write a glossary, or separate specification from implementation.
+In the Baseline Run, two things steer the agent. First, my global user rule tells it to ask clarifying questions one at a time. Second, once those questions are answered, it activates its built-in modern-web-guidance skill for dark-mode UI polish. Notice what is missing, though: nothing tells the agent to challenge domain terms, write a glossary, or separate specification from implementation.
 -->
 
 ---
@@ -84,7 +84,7 @@ fit: both
 
 <!-- S08 -->
 <!--
-Let's interact with the first half of the Baseline Run recording. Using the right-bracket key, we can step through the four clarifying questions: storage stack, key features where we write in project build progress tracking, part allocation, and guitar pedal focus. Then between stop points 9 and 10, the player automatically accelerates the 23-minute one-shot implementation to 29x speed so we can watch it generate the SQLite schema, Express server, and frontend in under 30 seconds.
+Let's interact with the first half of the Baseline Run recording. Using the right-bracket key, we can step through the four clarifying questions: storage stack, key features where I write in project build progress tracking, part allocation, and guitar pedal and Eurorack focus. Then between stop points 9 and 10, the player accelerates the 14-minute one-shot implementation so we can watch it generate the SQLite schema, Express server, and frontend in under 30 seconds.
 -->
 
 ---
@@ -114,7 +114,7 @@ layout: default
     <ul class="text-xs text-gray-300 space-y-1.5 list-disc pl-4">
       <li><strong>Node 22 + Express:</strong> <code>server.js</code>, <code>schema.sql</code>, vanilla frontend.</li>
       <li><strong>Realistic Seed Data:</strong> <code>TL072</code>, <code>PT2399</code>, <code>1N4148</code>, pedal kit records.</li>
-      <li><strong>Hardware Styling:</strong> Resistor color-band generator, dark workbench UI.</li>
+      <li><strong>Hardware Styling:</strong> Resistor colour-band generator, dark workbench UI.</li>
       <li><strong>Immediate Result:</strong> Looks functional and complete in browser on <code>localhost:3000</code>.</li>
     </ul>
   </div>
@@ -179,7 +179,7 @@ layout: default
     <h3 class="text-lg font-bold text-white">16 Minutes to a Working Prototype</h3>
     <ul class="text-xs text-gray-300 space-y-2 list-disc pl-4">
       <li>Zero setup friction: Node 22 built-in <code>node:sqlite</code> + Express with realistic seeded audio components (<code>TL072</code>, <code>PT2399</code>, <code>1N4148</code>) and pedal kits.</li>
-      <li><code>modern-web-guidance</code> delivered an impressive hardware-inspired dark workbench UI with resistor color-band previews.</li>
+      <li><code>modern-web-guidance</code> delivered an impressive hardware-inspired dark workbench UI with resistor colour-band previews.</li>
       <li><strong>Best for:</strong> Discovering what you actually want when requirements are still fuzzy.</li>
     </ul>
   </div>
@@ -189,12 +189,12 @@ layout: default
     <h3 class="text-lg font-bold text-white">8 Bugs &amp; Zero Durable Intent Artifacts</h3>
     <ul class="text-xs text-gray-300 space-y-2 list-disc pl-4">
       <li><strong>No tests or docs:</strong> Zero unit/integration tests, no <code>GLOSSARY.md</code>, no <code>ADR</code>s, and no <code>spec.md</code>.</li>
-      <li><strong>Shallow domain model:</strong> Flat string storage locations, binary 2-state kit status, and per-kit shortage math that double-counts shared stock across multiple planned builds.</li>
+      <li><strong>Shallow domain model:</strong> Flat string storage locations, binary 2-state kit status, and per-kit shortage maths that double-counts shared stock across multiple planned builds.</li>
       <li><strong>8 functional bugs:</strong> Non-transactional BOM deduction, <code>parseInt</code> truncating <code>4.7k</code> to <code>4</code>, and unescaped <code>innerHTML</code> interpolation.</li>
     </ul>
   </div>
 </div>
 
 <!--
-Let's take an honest look at both sides of this Baseline Run. On the left, getting a rich, seeded dark-mode prototype running on localhost in 16 minutes is genuinely impressive—if you are exploring a new idea, nothing beats that speed. On the right, once you clear the context window, you discover that the domain model is shallow, there are zero automated tests, and the fresh session had to fix 8 functional bugs just by reading the raw code.
+So, let's take an honest look at both sides of this Baseline Run. On the left, getting a rich, seeded dark-mode prototype running on localhost in 16 minutes is genuinely impressive—if you are exploring a new idea, nothing beats that speed. On the right, though, once you clear the context window, it turns out the domain model is shallow, there are zero automated tests, and the fresh session had to fix 8 functional bugs just by reading the raw code.
 -->
